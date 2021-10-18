@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Staatliches&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
+
+  <title>Day Planner</title>
+
+</head>
+
+<body>
+
+  <div class="row min-vh-100 no-gutters">
+    <header class="col-12 col-lg-3 bg-dark text-light sticky-top d-flex flex-column p-4 p-lg-3">
+     <h1 class="text-center">
+        <span class="oi oi-task d-inline d-lg-none"></span>
+        Day Planner
+        <p id="currentDay" class="lead"></p>
+        <p input type="date" name="trip-start" id="date"></p>
+        <span class="oi oi-task display-1 text-center mb-2 d-none d-lg-block mt-auto"></span>
+        <p class="d-none d-lg-block"></p>
+      </h1>    
+      <div>Past = <span class = "past"> Blue </span></div>
+      <div>Current = <span class = "present"> Green </span></div>
+      <div>Future = <span class = "future"> Light Gray </span></div>
+    <!--  
+      <button id="create-task" class="btn btn-block btn-add" data-toggle="modal" data-target="#task-form-modal">
+        <span class="oi oi-plus mr-2"></span>Add Task</button>
+    
+      <button id="remove-tasks" class="btn btn-block btn-delete mb-2 mb-md-4">
+        <span class="oi oi-trash mr-2"></span>Delete All Tasks</button>
+    -->
+    </header>
+
+    <!--CARDS-->
+
+    <main class="col-12 col-lg-9 d-flex flex-column ">
+      <div class="m-5 row justify-content-around">
+
+
+        <!--  -->
+        <div class="col-12 col-md-6 col-xl-3 mb-3">
+          <div class="card row" id="8">
+            <h4 class="card-header bg-dark text-light d-flex align-items-center">
+              8:00 AM
+            </h4>
+
+            <div class="col-8 description backgroundTool border-bottom scheduler">
+              <span class="textData 8amSpan">Double Click Here to Enter / Edit Task</span>
+              <input id="8amInput" class="d-none border-0 form-control textarea bg-transparent am8Input" type="text" placeholder="Enter Task">
+            </div>
+            <div class="col-2 saveBtn">
+              <button type="submit" id="8amButton" class="btn btn-primary mb-2 am8Button">Save</button>
+           </div>
+
+            <ul id="list-8a" class="list-group list-group-flush"></ul>
+          </div>
+        </div>
+
+        <!--  -->
+        <div class="col-12 col-md-6 col-xl-3 mb-3">
+          <div class="card row" id="9">
+            <h4 class="card-header bg-dark text-light d-flex align-items-center">
+              9:00 AM
+            </h4>
+
+            <div class="col-8 description backgroundTool border-bottom scheduler">
+              <span class="textData 9amSpan">Double Click Here to Enter / Edit Task</span>
+              <input id="9amInput" class="d-none border-0 form-control textarea bg-transparent am9Input" type="text" placeholder="Enter Task">
+            </div>
+            <div class="col-2 saveBtn">
+              <button type="submit" id="9amButton" class="btn btn-primary mb-2 am9Button">Save</button>
+           </div>
+
+            <ul id="list-9a" class="list-group list-group-flush">
+            </ul>
+          </div>
+        </div>
+
+        <!--  -->
+        <div class="col-12 col-md-6 col-xl-3 mb-3">
+          <div class="card row" id="10">
+            <h4 class="card-header bg-dark text-light d-flex align-items-center">
+              10:00 AM
+            </h4>
+            <div class="col-8 description backgroundTool border-bottom scheduler">
+              <span class="textData 10amSpan">Double Click Here to Enter / Edit Task</span>
+              <input id="10amInput" class="d-none border-0 form-control textarea bg-transparent am10Input" type="text" placeholder="Enter Task">
+            </div>
+            <div class="col-2 saveBtn">
+              <button type="submit" id="10amButton" class="btn btn-primary mb-2 am10Button">Save</button>
+           </div>
+            <ul id="list-10a" class="list-group list-group-flush">
+            </ul>
+          </div>
+        </div>
+
+        <!--  -->
+        <div class="col-12 col-md-6 col-xl-3 mb-3">
+          <div class="card row" id="11">
+            <h4 class="card-header bg-dark text-light d-flex align-items-center">
+              11:00 AM
+            </h4>
+            <div class="col-8 description backgroundTool border-bottom scheduler">
+              <span class="textData 11amSpan">Double Click Here to Enter / Edit Task</span>
+              <input id="11amInput" class="d-none border-0 form-control textarea bg-transparent am11Input" type="text" placeholder="Enter Task">
+            </div>
+            <div class="col-2 saveBtn">
+              <button type="submit" id="11amButton" class="btn btn-primary mb-2 am11Button">Save</button>
+           </div>
+            <ul id="list-11a" class="list-group list-group-flush">
+            </ul>
+          </div>
+        </div>
+
+        <!--  -->
+        <div class="col-12 col-md-6 col-xl-3 mb-3">
+          <div class="card row" id="12">
+            <h4 class="card-header bg-dark text-light d-flex align-items-center">
+              12:00 PM
+            </h4>
+            <div class="col-8 description backgroundTool border-bottom scheduler">
+              <span class="textData 12pmSpan">Double Click Here to Enter / Edit Task</span>
+              <input id="12pmInput" class="d-none border-0 form-control textarea bg-transparent pm12Input" type="text" placeholder="Enter Task">
+            </div>
+            <div class="col-2 saveBtn">
+              <button type="submit" id="12pmButton" class="btn btn-primary mb-2 pm12Button">Save</button>
+           </div>
+            <ul id="list-12p" class="list-group list-group-flush">
+            </ul>
+          </div>
+        </div>
+        <!--  -->
+
+        <div class="col-12 col-md-6 col-xl-3 mb-3">
+          <div class="card row" id="13">
+            <h4 class="card-header bg-dark text-light d-flex align-items-center">
+              1:00 PM
+            </h4>
+            <div class="col-8 description backgroundTool border-bottom scheduler">
+              <span class="textData 1pmSpan">Double Click Here to Enter / Edit Task</span>
+              <input id="1pmInput" class="d-none border-0 form-control textarea bg-transparent pm1Input" type="text" placeholder="Enter Task">
+            </div>
+            <div class="col-2 saveBtn">
+              <button type="submit" id="1pmButton" class="btn btn-primary mb-2 pm1Button">Save</button>
+           </div>
+            <ul id="list-1p" class="list-group list-group-flush">
+            </ul>
+          </div>
+        </div>
+        <!--  -->
+        <div class="col-12 col-md-6 col-xl-3 mb-3">
+          <div class="card row" id="14">
+            <h4 class="card-header bg-dark text-light d-flex align-items-center">
+              2:00 PM
+            </h4>
+            <div class="col-8 description backgroundTool border-bottom scheduler">
+              <span class="textData 2pmSpan">Double Click Here to Enter / Edit Task</span>
+              <input id="2pmInput" class="d-none border-0 form-control textarea bg-transparent pm2Input" type="text" placeholder="Enter Task">
+            </div>
+            <div class="col-2 saveBtn">
+              <button type="submit" id="2pmButton" class="btn btn-primary mb-2 pm2Button">Save</button>
+           </div>
+            <ul id="list-2p" class="list-group list-group-flush">
+            </ul>
+          </div>
+        </div>
+        <!--  -->
+        <div class="col-12 col-md-6 col-xl-3 mb-3">
+          <div class="card row" id="15">
+            <h4 class="card-header bg-dark text-light d-flex align-items-center">
+              3:00 PM
+            </h4>
+            <div class="col-8 description backgroundTool border-bottom scheduler">
+              <span class="textData 3pmSpan">Double Click Here to Enter / Edit Task</span>
+              <input id="3pmInput" class="d-none border-0 form-control textarea bg-transparent pm3Input" type="text" placeholder="Enter Task">
+            </div>
+            <div class="col-2 saveBtn">
+              <button type="submit" id="3pmButton" class="btn btn-primary mb-2 pm3Button">Save</button>
+           </div>
+            <ul id="list-3p" class="list-group list-group-flush">
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-xl-3 mb-3">
+          <div class="card row" id="16">
+            <h4 class="card-header bg-dark text-light d-flex align-items-center">
+              4:00 PM
+            </h4>
+            <div class="col-8 description backgroundTool border-bottom scheduler">
+              <span class="textData 4pmSpan">Double Click Here to Enter / Edit Task</span>
+              <input id="4pmInput" class="d-none border-0 form-control textarea bg-transparent pm4Input" type="text" placeholder="Enter Task">
+            </div>
+            <div class="col-2 saveBtn">
+              <button type="submit" id="4pmButton" class="btn btn-primary mb-2 pm4Button">Save</button>
+           </div>
+            <ul id="list-4p" class="list-group list-group-flush"></ul>
+          </div>
+        </div>
+        <!--  -->
+        <div class="col-12 col-md-6 col-xl-3 mb-3">
+          <div class="card row" id="17">
+            <h4 class="card-header bg-dark text-light d-flex align-items-center">
+              5:00 PM
+            </h4>
+            <div class="col-8 description backgroundTool border-bottom scheduler">
+              <span class="textData 5pmSpan">Double Click Here to Enter / Edit Task</span>
+              <input id="5pmInput" class="d-none border-0 form-control textarea bg-transparent pm5Input" type="text" placeholder="Enter Task">
+            </div>
+            <div class="col-2 saveBtn">
+              <button type="submit" id="5pmButton" class="btn btn-primary mb-2 pm5Button">Save</button>
+           </div>
+            <ul id="list-5p" class="list-group list-group-flush">
+            </ul>
+          </div>
+        </div>
+        <!--  -->
+      </div>
+  </div>
+
+
+<!--TRASH CAN  
+ <div class="mt-auto overflow-hidden" id="trash">
+    <div class="w-100 p-3 text-center bottom-trash">
+      <span class="oi oi-trash"> </span> Drop Here to Remove.
+    </div>
+  </div>
+  </main>
+  </div>
+-->
+
+  <!-- Modal -
+  <div class="modal fade" id="task-form-modal" tabindex="-1" role="dialog" aria-labelledby="task-form-modal"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="myModalTitle">Add New Task</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="modalTaskDescription">Task description</label>
+              <textarea class="form-control" id="modalTaskDescription" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="modalDueDate">Due date</label>
+              <input type="text" class="form-control" placeholder="mm/dd/yyyy" id="modalDueDate" autocomplete="off">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-close" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-save">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+-->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <script src="./assets/js/script.js"></script>
+
+</body>
+
+</html>
